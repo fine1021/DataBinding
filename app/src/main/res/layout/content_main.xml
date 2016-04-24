@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <!--java.lang.* 是自动导入的-->
+        <import type="java.util.Map"/>
+
+        <variable
+            name="user"
+            type="com.yxkang.android.databinding.User"/>
+
+        <variable
+            name="index"
+            type="int"/>
+
+        <variable
+            name="key"
+            type="String"/>
+
+        <!--编译器可能会标红提示不识别的类，只要导入了正确的包，是不影响编译-->
+        <variable
+            name="map"
+            type="Map&lt;String, String>"/>
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:paddingBottom="@dimen/activity_vertical_margin"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:paddingTop="@dimen/activity_vertical_margin"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        tools:context="com.yxkang.android.databinding.MainActivity"
+        tools:showIn="@layout/activity_main">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{String.valueOf(index) + '-' + key}"
+            android:textSize="18sp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{user.firstName}"
+            android:textSize="18sp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{user.lastName}"
+            android:textSize="18sp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{String.valueOf(user.age)}"
+            android:textSize="18sp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{user.describe}"
+            android:textSize="18sp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{map[key]}"
+            android:textSize="18sp"/>
+
+        <!--Common collections: arrays, lists, sparse lists, and maps, may be accessed using the [] operator for convenience.-->
+        <!--android:text="@{map[`value`]}"-->
+        <!--android:text="@{map[&quot;value&quot;]}"-->
+        <!--android:text='@{map["value"]}'-->
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{map[`value`]}"
+            android:textSize="18sp"/>
+    </LinearLayout>
+</layout>
