@@ -22,7 +22,7 @@
         <!--编译器可能会标红提示不识别的类，只要导入了正确的包，是不影响编译-->
         <variable
             name="map"
-            type="Map&lt;String, String>"/>
+            type="java.util.Map&lt;String, String>"/>
     </data>
 
     <LinearLayout
